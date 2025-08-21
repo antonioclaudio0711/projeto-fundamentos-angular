@@ -1,0 +1,27 @@
+<div *ngIf="!mostrarModalErro; else modalErro">
+</div>
+<section class="container">
+  <form class="formulario" (ngSubmit)="transferir()">
+    <h2 class="formulario__titulo">Nova transferência</h2>
+
+    <div class="form-field">
+      <label for="valor" class="form-field__label">Valor</label>
+      <input type="number" name="valor" id="valor" class="form-field__input" [(ngModel)]="valor">
+    </div>
+
+    <div class="form-field">
+      <label for="destino" class="form-field__label">Destino</label>
+      <input type="text" name="destino" id="destino" class="form-field__input" [(ngModel)]="destino">
+    </div>
+
+    <div class="botao-wrapper">
+      <button class="botao">Transferir</button>
+    </div>
+  </form>
+</section>
+
+<ng-template #modalErro>
+  <div class="modal-erro">
+    <p>Os campos "Valor" e "Destino" precisam ser preenchidos!</p>
+  </div>
+</ng-template>
