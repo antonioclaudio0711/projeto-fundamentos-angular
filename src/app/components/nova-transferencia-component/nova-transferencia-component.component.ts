@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from "@angular/core";
+import { Router } from "@angular/router";
 import { TransferenciaService } from "src/app/services/transferencia-service/transferencia.service";
 import { Transferencia } from "src/app/shared/models/Transferencia";
 import { isFunctionOrConstructorTypeNode } from "typescript";
@@ -12,7 +13,10 @@ import { isFunctionOrConstructorTypeNode } from "typescript";
     ],
 })
 export class NovaTransferenciaComponent {
-    public constructor(private _transferenciaService: TransferenciaService) { }
+    public constructor(
+        private _transferenciaService: TransferenciaService,
+        private _router: Router
+    ) { }
 
     protected valor: number;
     protected destino: number;
@@ -31,6 +35,8 @@ export class NovaTransferenciaComponent {
                 next: (transferencia: Transferencia) => {
                     console.log(transferencia);
                     this.limparCampos();
+
+                    this._router.navigateByUrl("extrato");
                 },
                 error: (error) => {
                     console.log(error);

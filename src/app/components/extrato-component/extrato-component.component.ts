@@ -18,7 +18,6 @@ export class ExtratoComponent implements OnInit {
     public ngOnInit(): void {
         this._transferenciaService.retornaTodasTransferencias().subscribe({
             next: (transferencias: Transferencia[]) => {
-                console.log(this.transferencias);
                 this.transferencias = transferencias;
             }
         });

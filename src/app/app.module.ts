@@ -7,6 +7,7 @@ import { ExtratoComponent } from "./components/extrato-component/extrato-compone
 import { registerLocaleData } from "@angular/common";
 import localePt from "@angular/common/locales/pt";
 import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
+import { AppRoutingModule } from "./app.routing.module";
 
 registerLocaleData(localePt, "pt");
 
@@ -19,6 +20,7 @@ registerLocaleData(localePt, "pt");
     imports: [
         BrowserModule,
         FormsModule,
+        AppRoutingModule,
         // HttpClientModule
     ],
     providers: [

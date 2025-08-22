@@ -1,5 +1,9 @@
 <!-- <h1>Olá mundo!</h1> -->
 
-<nova-transferencia-component></nova-transferencia-component>
-<extrato-component></extrato-component>
-
+<header>
+    <a routerLink="extrato">Bytebank</a>
+    <a routerLink="nova-transferencia" routerLinkActive="ativo">Nova transferência</a>
+</header>
+<main>
+    <router-outlet></router-outlet>
+</main>
